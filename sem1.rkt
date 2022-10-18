@@ -29,21 +29,3 @@
         cur
         (helper cur (+ prev cur) (+ i 1))))
   (helper 1 0 0))
-
-  ; define a function that sorst a list of numbers
-(define (my-sort lst)
-    (cond [(null? lst) '()]
-            [else (insert (car lst) (my-sort (cdr lst)))]))
-    
-    ; define a function that inserts a number into a sorted list
-(define (insert n lst)
-    (cond [(null? lst) (list n)]
-            [(<= n (car lst)) (cons n lst)]
-            [else (cons (car lst) (insert n (cdr lst)))]))
-            
-
-; pi to the power of eulers constant
-(define (myfunc2)
-    (expt pi (exp 1)))
-(myfunc2)
-

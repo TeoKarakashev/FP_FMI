@@ -46,7 +46,7 @@
           [else (helper x (+ d 1))]
           ))
   (helper x 2))
-(prime? 11)
+
 
 (define (is-palindrome x)
 
