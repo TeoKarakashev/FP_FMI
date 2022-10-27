@@ -50,7 +50,6 @@
           [else (helper (+ d 1) sum)]))
   (= (helper 2 1) n))
 
-;По зададени x и n, да се дефинира функция (calc-sum x n), която пресмята сумата: 1 + x + x^2 + x^3 + ... + x^n. Използвайте не повече от n на брой умножения.
 (define (calc-sum x n)
 (define (helper power)
   (if (> power n)
@@ -58,10 +57,25 @@
   (+ (pow x power) (helper (+ power 1)))))
   (helper 0))
 
-(calc-sum 2 3)
+
+(define (filtered-sum p? a b)
+  (cond [(> a b) 0]
+        [(p? a) (+ a (filtered-sum p? (+ a 1) b))]
+        [else (filtered-sum p? (+ a 1) b)]))
+
+(filtered-sum even? 1 10)
 
 
 
+; Ctrl + \ === lambda === λ
+
+(define (perfect-number-2? n)
+  (= n (filtered-sum (λ (d) (= 0 (remainder n d))) 1 (- n 1))))
+
+(perfect-number-2? 6)
+(perfect-number-2? 27)
+(perfect-number-2? 28)
+(perfect-number-2? 8128)
 
 
 
