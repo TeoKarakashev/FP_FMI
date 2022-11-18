@@ -1,2 +1,2 @@
 # FP_FMI
- given tasks for the funtional programing course @ FMI Sofia
+ given tasks for the functional programing course @ FMI Sofia
